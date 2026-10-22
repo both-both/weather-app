@@ -9,7 +9,7 @@ export const getPosition = () => new Promise(resolve => {
             lon: pos.coords.longitude.toFixed(2)
 
         }),
-        () => resolve(fallback)
+        () => resolve(fallback),
         { timeout: 5000 }
     )
 })

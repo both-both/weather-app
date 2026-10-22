@@ -5,5 +5,7 @@ import { hourItem } from '../molecules/hourItem.js'
 export const hourlyStrip = hours => {
     const element = createDiv('hourly')
     element.append(...hours.map(hourItem))
+    element.addEventListener('pointerdown', event => event.stopPropagation())
+
     return element
 }

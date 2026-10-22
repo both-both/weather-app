@@ -1,23 +1,4 @@
-<!-- @license lucide-static v0.460.0 - ISC -->
-<svg
-  class="lucide lucide-sun"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="4" />
-  <path d="M12 2v2" />
-  <path d="M12 20v2" />
-  <path d="m4.93 4.93 1.41 1.41" />
-  <path d="m17.66 17.66 1.41 1.41" />
-  <path d="M2 12h2" />
-  <path d="M20 12h2" />
-  <path d="m6.34 17.66-1.41 1.41" />
-  <path d="m19.07 4.93-1.41 1.41" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <path d="M256,498.36c-64.74,0-125.6-25.21-171.37-70.98-45.77-45.77-70.98-106.64-70.98-171.37s25.21-125.6,70.98-171.37C130.4,38.85,191.26,13.65,256,13.65s125.6,25.21,171.37,70.98c45.78,45.77,70.98,106.64,70.98,171.37s-25.21,125.6-70.98,171.37c-45.77,45.78-106.64,70.98-171.37,70.98ZM256,63.65c-106.06,0-192.35,86.29-192.35,192.35s86.29,192.36,192.35,192.36,192.36-86.29,192.36-192.36S362.07,63.65,256,63.65Z"/>
 </svg>

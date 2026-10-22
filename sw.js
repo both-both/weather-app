@@ -1,4 +1,4 @@
-const CACHE = 'static-v1'
+const CACHE = 'static-v2'
 
 const FILES = [
     './',
@@ -44,16 +44,21 @@ self.addEventListener("install", (event) => {
 });
 
 // ACTIVATE: Service Worker aktiveres og den er klat til brug - husk at lukke åbne tabs i browseren
-self.addEventListener("activate", () => {
-    console.log("Service worker: activate");
-});
+self.addEventListener('activate', event => {
+    event.waitUntil(
+        caches.keys().then(keys =>
+            Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))
+        )
+    )
+})
+
 
 
 // 3. FETCH: to caching strategier - api.open-meteo (api + billeder): NETWORK FIRST -> ny data når vi er online, tidligere data når vi er offline - alt andet (statiske filer): CACHE FIRST
 
 self.addEventListener("fetch", (event) => {
 
-    if (event.request.url.includes("api.open-meteo")) {
+    if (event.request.url.includes('api.open-meteo') || event.request.url.includes('bigdatacloud')) {
         event.respondWith(networkFirst(event.request));
         console.log("Service worker: network first", event.request.url);
     } else {
