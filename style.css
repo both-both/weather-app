@@ -1,0 +1,13 @@
+.day,
+.week {
+  touch-action: pan-y;
+}
+
+.day {
+  background: radial-gradient(
+    circle at 50% 35%,
+    var(--weather-color) 0 30%,
+    transparent 60%
+  );
+  min-height: 100vh;
+}
