@@ -1,36 +1,60 @@
-const weatherCodes = {
-    0: { label: 'Klart', icon: 'sun' },
-    1: { label: 'Overvejende klart', icon: 'sun-cloud' },
-    2: { label: 'Delvist skyet', icon: 'sun-cloud' },
-    3: { label: 'Overskyet', icon: 'cloud' },
-    45: { label: 'Tåge', icon: 'fog' },
-    48: { label: 'Rimtåge', icon: 'fog' },
-    51: { label: 'Let støvregn', icon: 'drizzle' },
-    53: { label: 'Støvregn', icon: 'drizzle' },
-    55: { label: 'Tæt støvregn', icon: 'drizzle' },
-    61: { label: 'Let regn', icon: 'rain' },
-    63: { label: 'Regn', icon: 'rain' },
-    65: { label: 'Kraftig regn', icon: 'rain' },
-    71: { label: 'Let sne', icon: 'snow' },
-    73: { label: 'Sne', icon: 'snow' },
-    75: { label: 'Kraftig sne', icon: 'snow' },
-    80: { label: 'Lette byger', icon: 'rain' },
-    81: { label: 'Byger', icon: 'rain' },
-    82: { label: 'Kraftige byger', icon: 'rain' },
-    95: { label: 'Torden', icon: 'storm' }
+// oversætter Open-Meteos WMO-vejrkode til dansk label og ikonnavn
+export const getWeather = code => {
+    switch (code) {
+        case 0:
+            return { label: 'Klart', icon: 'sun' }
+        case 1:
+            return { label: 'Overvejende klart', icon: 'sun-cloud' }
+        case 2:
+            return { label: 'Delvist skyet', icon: 'sun-cloud' }
+        case 3:
+            return { label: 'Overskyet', icon: 'cloud' }
+        case 45:
+            return { label: 'Tåge', icon: 'fog' }
+        case 48:
+            return { label: 'Rimtåge', icon: 'fog' }
+        case 51:
+            return { label: 'Let støvregn', icon: 'drizzle' }
+        case 53:
+            return { label: 'Støvregn', icon: 'drizzle' }
+        case 55:
+            return { label: 'Tæt støvregn', icon: 'drizzle' }
+        case 61:
+            return { label: 'Let regn', icon: 'rain' }
+        case 63:
+            return { label: 'Regn', icon: 'rain' }
+        case 65:
+            return { label: 'Kraftig regn', icon: 'rain' }
+        case 71:
+            return { label: 'Let sne', icon: 'snow' }
+        case 73:
+            return { label: 'Sne', icon: 'snow' }
+        case 75:
+            return { label: 'Kraftig sne', icon: 'snow' }
+        case 80:
+            return { label: 'Lette byger', icon: 'rain' }
+        case 81:
+            return { label: 'Byger', icon: 'rain' }
+        case 82:
+            return { label: 'Kraftige byger', icon: 'rain' }
+        case 95:
+            return { label: 'Torden', icon: 'storm' }
+
+        // koder vi ikke kender
+        default:
+            return { label: 'Ukendt', icon: 'cloud' }
+    }
 }
 
-export const getWeather = code => weatherCodes[code] ?? { label: 'Ukendt', icon: 'cloud' }
-
-
+// baggrundsfarve til hver vejrtype - bruges som --weather-color
 const colors = {
-    'sun': '#ffd27a',
-    'sun-cloud': '#ffe3a8',
-    'cloud': '#d4dae0',
+    'sun': '#ffb237',
+    'sun-cloud': '#f3d88e',
+    'cloud': '#aacdef',
     'fog': '#e2e2e2',
     'drizzle': '#c7dcec',
-    'rain': '#b7d2e8',
-    'snow': '#eef4fb',
+    'rain': '#caddec',
+    'snow': '#ceeefe',
     'storm': '#b4b4cc'
 }
 

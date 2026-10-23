@@ -1,15 +1,15 @@
 import { createDiv, createHeading, createParagraph, createImage } from '../components/atoms/index.js'
-import { hourlyStrip } from '../components/organisms/hourlyStrip.js'
-import { windIndicator } from '../components/molecules/windIndicator.js'
+import { hourlyStrip } from '../components/organisms/hourlyStripOrganism.js'
+import { windIndicator } from '../components/molecules/windIndicatorMolecule.js'
 
-//hjælpefunktion over dayView
+// oversætter nedbør til tekst ingen, sne eller regn
 const precipitationType = day => {
     if (day.precipitation === 0) return 'Ingen nedbør'
     if (day.snow > 0) return 'Sne'
     return 'Regn'
 }
 
-
+// detaljer for en dag
 export const dayView = day => {
     const element = createDiv('day')
     element.style.setProperty('--weather-color', day.color)
@@ -29,7 +29,7 @@ export const dayView = day => {
     element.append(
         createHeading(2, day.city, 'day-city'),
         createImage(`assets/icons/${day.icon}.svg`, day.label, 'day-icon'),
-        createHeading(1, `${day.max}°`),
+        createHeading(1, `${day.temp}°`),
         summary,
         createParagraph(precipitationType(day)),
         hourlyStrip(day.hours)

@@ -1,4 +1,4 @@
-const CACHE = 'static-v2'
+const CACHE = 'static-v4'
 
 const FILES = [
     './',
@@ -11,7 +11,8 @@ const FILES = [
     './js/controller/dayController.js',
     './js/controller/weekController.js',
     './js/utils/formatDay.js',
-    './js/utils/geo.js',
+    './js/model/geoModel.js',
+    './js/model/locationModel.js',
     './js/utils/swipe.js',
     './js/utils/weatherCodes.js',
     './js/view/components/atoms/index.js',

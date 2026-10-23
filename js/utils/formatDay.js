@@ -1,5 +1,6 @@
 import { getWeather, getColor } from './weatherCodes.js'
 
+// samler data for én dag (index i) fra Open-Meteos daily-arrays i ét objekt
 export const formatDay = (data, i) => ({
     date: data.daily.time[i],
     code: data.daily.weather_code[i],

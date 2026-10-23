@@ -1,3 +1,4 @@
+// ATOMS: de mindste byggeklodser - hver funktion laver ét HTML-element
 export const createDiv = (className = '') => {
     const element = document.createElement('div')
     element.className = className

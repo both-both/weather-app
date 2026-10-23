@@ -1,6 +1,7 @@
 import { createDiv, createHeading } from '../components/atoms/index.js'
-import { dayList } from '../components/organisms/dayList.js'
+import { dayList } from '../components/organisms/dayListOrganism.js'
 
+//  5 dages oversigten
 export const weekView = days => {
     const element = createDiv('week')
     element.append(
