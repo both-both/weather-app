@@ -12,6 +12,7 @@ const precipitationType = day => {
 // detaljer for en dag
 export const dayView = day => {
     const element = createDiv('day')
+    // farven bruges i CSS til baggrunden, så den passer til vejret
     element.style.setProperty('--weather-color', day.color)
 
     const side = createDiv('day-side')
